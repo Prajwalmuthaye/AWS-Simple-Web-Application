@@ -127,18 +127,18 @@ Launch instance.
 
 Connect via SSH:
 
----
+```
 ssh -i my-key.pem ec2-user@<Public-IP>
----
+```
 
 Install Java:
----
+```
 sudo dnf install java-17-amazon-corretto -y
----
+```
 Check:
----
+```
 java -version
----
+```
 
 ---
 
@@ -166,37 +166,38 @@ Copy RDS endpoint.
 ## ✅ STEP 8: Connect EC2 to RDS
 
 Install MySQL client:
----
+```
 sudo dnf install mysql -y
----
+```
 Connect:
----
+```
 mysql -h <RDS-ENDPOINT> -u admin -p
----
+```
 Create database:
----
+```
 CREATE DATABASE myappdb;
 USE myappdb;
+
 CREATE TABLE users (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100),
 email VARCHAR(100),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
----
+```
 
 ---
 
 ## ✅ STEP 9: Deploy Java Application
 
 Compile:
----
+```
 javac -cp .:mysql-connector-j-8.0.33.jar DBTest.java
----
+```
 Run:
----
+```
 java -cp .:mysql-connector-j-8.0.33.jar DBTest
----
+```
 
 If successful, backend is connected to RDS.
 
