@@ -2,7 +2,7 @@
 
 This project demonstrates how to design and deploy a simple dynamic web application on AWS using core cloud services.
 
-## 🎯 Project Goal
+## Project Goal
 
 Deploy a web application with:
 
@@ -13,7 +13,7 @@ Using secure and scalable cloud architecture.
 
 ---
 
-# 🏗 Architecture Overview
+# Architecture Overview
 
 User  
 ↓  
@@ -29,7 +29,7 @@ CloudWatch → Monitoring
 
 ---
 
-# 🛠 AWS Services Used
+# AWS Services Used
 
 - Amazon VPC  
 - Amazon EC2  
@@ -43,11 +43,11 @@ CloudWatch → Monitoring
 
 ---
 
-# 🚀 Step-by-Step Deployment
+# Step-by-Step Deployment
 
 ---
 
-## ✅ STEP 1: Create VPC
+## STEP 1: Create VPC
 
 1. Go to AWS Console → VPC  
 2. Click Create VPC  
@@ -61,7 +61,7 @@ CloudWatch → Monitoring
 
 ---
 
-## ✅ STEP 2: Create Subnets
+## STEP 2: Create Subnets
 
 Inside the VPC create:
 
@@ -78,7 +78,7 @@ Inside the VPC create:
 
 ---
 
-## ✅ STEP 3: Create Internet Gateway
+## STEP 3: Create Internet Gateway
 
 1. Go to Internet Gateways  
 2. Create Internet Gateway  
@@ -88,7 +88,7 @@ Inside the VPC create:
 
 ---
 
-## ✅ STEP 4: Configure Route Table
+## STEP 4: Configure Route Table
 
 1. Create Route Table  
 2. Add Route:
@@ -100,7 +100,7 @@ Inside the VPC create:
 
 ---
 
-## ✅ STEP 5: Launch EC2 (Backend Server)
+## STEP 5: Launch EC2 (Backend Server)
 
 1. Go to EC2 → Launch Instance  
 2. Choose:
@@ -111,7 +111,7 @@ Inside the VPC create:
    - Subnet: Public-Subnet  
    - Auto Assign Public IP: Enable  
 
-### 🔐 Security Group Rules
+### Security Group Rules
 
 | Type | Port | Source |
 |------|------|--------|
@@ -123,7 +123,7 @@ Launch instance.
 
 ---
 
-## ✅ STEP 6: Install Java on EC2
+## STEP 6: Install Java on EC2
 
 Connect via SSH:
 
@@ -142,7 +142,7 @@ java -version
 
 ---
 
-## ✅ STEP 7: Create RDS Database
+## STEP 7: Create RDS Database
 
 1. Go to RDS → Create Database  
 2. Choose:
@@ -151,7 +151,7 @@ java -version
    - VPC: My-WebApp-VPC  
    - Subnet: Private-Subnet  
 
-### 🔐 RDS Security Group
+### RDS Security Group
 
 Allow:
 - Port 3306  
@@ -163,7 +163,7 @@ Copy RDS endpoint.
 
 ---
 
-## ✅ STEP 8: Connect EC2 to RDS
+## STEP 8: Connect EC2 to RDS
 
 Install MySQL client:
 ```
@@ -203,7 +203,7 @@ If successful, backend is connected to RDS.
 
 ---
 
-# 🔐 Security Best Practices
+# Security Best Practices
 
 - RDS in Private Subnet  
 - No public DB access  
@@ -213,7 +213,7 @@ If successful, backend is connected to RDS.
 
 ---
 
-# 📊 Final Network Structure
+# Final Network Structure
 
 VPC (10.0.0.0/16)
 │
