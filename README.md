@@ -188,7 +188,7 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 ---
 
-## ✅ STEP 9: Deploy Java Application
+## STEP 9: Deploy Java Application
 
 Compile:
 ```
